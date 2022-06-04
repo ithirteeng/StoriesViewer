@@ -21,7 +21,7 @@ class FirstStory : Fragment(R.layout.fragment_first_story) {
         return binding.root
     }
 
-    @SuppressLint("UseCompatLoadingForDrawables")
+    @SuppressLint("UseCompatLoadingForDrawables", "NewApi")
     private fun changeData() {
         val changeStoriesData = ChangeStoriesData(binding.container)
         changeStoriesData.changePlaceText("Нью-Йорк,США")
@@ -29,6 +29,7 @@ class FirstStory : Fragment(R.layout.fragment_first_story) {
         changeStoriesData.changeHeaderText("Архитектура")
         changeStoriesData.changeDescriptionText("Подборка для вас")
         changeStoriesData.changeMainPicture(resources.getDrawable(R.drawable.new_york_picture, requireContext().theme))
+        changeStoriesData.updateView(0, requireContext())
     }
 
 

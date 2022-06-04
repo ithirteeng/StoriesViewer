@@ -190,7 +190,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="cvcv"
-        android:textColor="@color/emptyStoryColor"
+        android:textColor="@color/descriptionTetColor"
         android:textSize="@dimen/footerTextSize"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/headerTextView"

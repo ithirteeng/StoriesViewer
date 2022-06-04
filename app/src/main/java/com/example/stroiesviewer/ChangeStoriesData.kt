@@ -2,18 +2,26 @@ package com.example.stroiesviewer
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
+import android.os.Build
 import android.widget.ImageView
-import androidx.renderscript.Allocation.createFromBitmap
+import androidx.annotation.RequiresApi
 import com.example.stroiesviewer.databinding.TemplateForFragmentsBinding
-import kotlin.math.roundToInt
+
 
 class ChangeStoriesData(binding: TemplateForFragmentsBinding) {
     companion object {
         const val BITMAP_SCALE = 0.4f
     }
+
     private val binding = binding
+    private val storyViews = arrayListOf<ImageView>(
+        binding.firstStoryView,
+        binding.secondStoryView,
+        binding.thirdStoryView,
+        binding.fourthStoryView,
+        binding.fifthStoryView,
+    )
     fun changePlaceText(string: String) {
         binding.placeTextView.text = string
     }
@@ -37,18 +45,21 @@ class ChangeStoriesData(binding: TemplateForFragmentsBinding) {
 
     fun changeMainPicture(imageResource: Drawable) {
         binding.mainImage.setImageDrawable(imageResource)
+        binding.blurImage.setImageDrawable(imageResource)
     }
 
-    fun makeBlurForBackgroundPicture(imageView: ImageView) {
-
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
+    fun updateView(index: Int, context: Context) {
+        for (image in storyViews) {
+            if (image == storyViews[index]) {
+                image.setImageDrawable(context.resources.getDrawable(R.drawable.current_story_line, context.theme))
+            } else {
+                image.setImageDrawable(context.resources.getDrawable(R.drawable.empty_story_line, context.theme))
+            }
+        }
     }
 
-    private fun blur(context: Context, image: Bitmap) : Bitmap {
 
-        val width = (image.width * BITMAP_SCALE).roundToInt()
-        val height = (image.height * BITMAP_SCALE).roundToInt()
 
-        var inputBitmap = Bitmap.createScaledBitmap(image, width, height, false)
-        var outputBitmap = Bitmap.createFromBitmap(inputBitmap)
-    }
+
 }
