@@ -2,12 +2,12 @@ package com.example.stroiesviewer
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.stroiesviewer.databinding.FragmentFifthStoryBinding
-import com.example.stroiesviewer.databinding.FragmentFourthStoryBinding
 
 class FifthStory : Fragment() {
     private lateinit var binding: FragmentFifthStoryBinding
@@ -19,13 +19,14 @@ class FifthStory : Fragment() {
     ): View {
         binding = FragmentFifthStoryBinding.inflate(layoutInflater)
         changeData()
+        toAnotherFragments()
         return binding.root
     }
 
     @SuppressLint("UseCompatLoadingForDrawables", "NewApi")
     private fun changeData() {
         val changeStoriesData = ChangeStoriesData(binding.container)
-        changeStoriesData.changePlaceText("Москва,Россия")
+        changeStoriesData.changePlaceText("Москва, Россия")
         changeStoriesData.changeTimeText("14 - 20 Июля")
         changeStoriesData.changeHeaderText("Достопримечательности")
         changeStoriesData.changeDescriptionText("Подборка для вас")
@@ -36,5 +37,11 @@ class FifthStory : Fragment() {
             )
         )
         changeStoriesData.updateView(4, requireContext())
+    }
+
+    @SuppressLint("ClickableViewAccessibility", "NewApi")
+    private fun toAnotherFragments() {
+        val width = activity?.windowManager?.defaultDisplay?.width
+        NavigationLogic(R.id.fourthStory, null, binding.root).navigate(width, findNavController())
     }
 }

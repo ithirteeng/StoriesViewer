@@ -2,10 +2,12 @@ package com.example.stroiesviewer
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.stroiesviewer.databinding.FragmentFirstStoryBinding
 
 class FirstStory : Fragment(R.layout.fragment_first_story) {
@@ -18,19 +20,31 @@ class FirstStory : Fragment(R.layout.fragment_first_story) {
     ): View {
         binding = FragmentFirstStoryBinding.inflate(layoutInflater)
         changeData()
+        toAnotherFragments()
         return binding.root
     }
 
     @SuppressLint("UseCompatLoadingForDrawables", "NewApi")
     private fun changeData() {
         val changeStoriesData = ChangeStoriesData(binding.container)
-        changeStoriesData.changePlaceText("Нью-Йорк,США")
+        changeStoriesData.changePlaceText("Нью-Йорк, США")
         changeStoriesData.changeTimeText("9 - 22 сентября")
         changeStoriesData.changeHeaderText("Архитектура")
         changeStoriesData.changeDescriptionText("Подборка для вас")
-        changeStoriesData.changeMainPicture(resources.getDrawable(R.drawable.new_york_picture, requireContext().theme))
+        changeStoriesData.changeMainPicture(
+            resources.getDrawable(
+                R.drawable.new_york_picture,
+                requireContext().theme
+            )
+        )
         changeStoriesData.updateView(0, requireContext())
+        //changeStoriesData.changeBackgroundPicture(requireContext(), binding.container.blurImage)
     }
 
+    @SuppressLint("ClickableViewAccessibility", "NewApi")
+    private fun toAnotherFragments() {
+        val width = activity?.windowManager?.defaultDisplay?.width
+        NavigationLogic(null, R.id.secondStory, binding.root).navigate(width, findNavController())
+    }
 
 }

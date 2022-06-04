@@ -6,7 +6,6 @@
     android:layout_height="match_parent">
 
 
-
     <ImageView
         android:id="@+id/blurImage"
         android:layout_width="0dp"
@@ -176,7 +175,8 @@
         app:layout_constraintEnd_toStartOf="@+id/rightEdge"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/leftEdge"
-        app:layout_constraintTop_toTopOf="@+id/bottomGuideline" />
+        app:layout_constraintTop_toTopOf="@+id/bottomGuideline"
+        tools:ignore="TextContrastCheck" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/bottomGuideline"
@@ -197,7 +197,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/leftEdge"
         app:layout_constraintTop_toBottomOf="@+id/headerTextView"
-        app:layout_constraintVertical_bias="0.162" />
+        app:layout_constraintVertical_bias="0.162"
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/button"
@@ -218,7 +219,7 @@
         tools:ignore="TextContrastCheck" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/arrowButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
@@ -228,6 +229,8 @@
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="@+id/button"
         app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTextView"
         app:srcCompat="@drawable/arrow_up"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
