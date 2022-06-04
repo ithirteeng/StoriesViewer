@@ -3,19 +3,15 @@ plugins {
     id 'org.jetbrains.kotlin.android'
 }
 
-android {
-    compileSdk 32
 
+android {
+    compileSdk 31
     defaultConfig {
         applicationId "com.example.stroiesviewer"
-        minSdk 28
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
-
-        renderscriptTargetApi = 18
-        renderscriptSupportModeEnabled = true
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        minSdk 9
+        targetSdk 19
+        renderscriptTargetApi 18
+        renderscriptSupportModeEnabled true
     }
 
     buildTypes {
@@ -47,4 +43,5 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
 }

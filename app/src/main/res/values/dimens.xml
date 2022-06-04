@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="placeTextSize">20sp</dimen>
-    <dimen name="timeTextSize">14sp</dimen>
-    <dimen name="footerTextSize">17sp</dimen>
-    <dimen name="sourceButtonTextSize">14sp</dimen>
+    <dimen name="placeTextSize">23sp</dimen>
+    <dimen name="timeTextSize">17sp</dimen>
+    <dimen name="footerTextSize">23sp</dimen>
+    <dimen name="sourceButtonTextSize">17sp</dimen>
 </resources>
