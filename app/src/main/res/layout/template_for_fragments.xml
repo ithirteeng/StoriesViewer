@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/blurImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/contentDescription"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ImageContrastCheck"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/mainImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/contentDescription"
+        android:isScrollContainer="true"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/blurImage"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="ImageContrastCheck"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/storyLinesGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <ImageView
+        android:id="@+id/firstStoryView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/contentDescription"
+        android:paddingStart="1dp"
+        android:paddingEnd="1dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/storyLinesGuideline"
+        app:layout_constraintEnd_toStartOf="@+id/secondStoryView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/leftEdge"
+        app:srcCompat="@drawable/empty_story_line"
+        tools:ignore="ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/secondStoryView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/contentDescription"
+        android:paddingStart="1dp"
+        android:paddingEnd="1dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/storyLinesGuideline"
+        app:layout_constraintEnd_toStartOf="@+id/thirdStoryView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/firstStoryView"
+        app:srcCompat="@drawable/empty_story_line"
+        tools:ignore="ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/thirdStoryView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/contentDescription"
+        android:paddingStart="1dp"
+        android:paddingEnd="1dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/storyLinesGuideline"
+        app:layout_constraintEnd_toStartOf="@+id/fourthStoryView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/secondStoryView"
+        app:srcCompat="@drawable/empty_story_line"
+        tools:ignore="ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/fourthStoryView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/contentDescription"
+        android:paddingStart="1dp"
+        android:paddingEnd="1dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/storyLinesGuideline"
+        app:layout_constraintEnd_toStartOf="@+id/fifthStoryView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/thirdStoryView"
+        app:srcCompat="@drawable/empty_story_line"
+        tools:ignore="ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/fifthStoryView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/contentDescription"
+        android:paddingStart="1dp"
+        android:paddingEnd="1dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/storyLinesGuideline"
+        app:layout_constraintEnd_toStartOf="@+id/rightEdge"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/fourthStoryView"
+        app:srcCompat="@drawable/empty_story_line"
+        tools:ignore="ImageContrastCheck" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftEdge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rightEdge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <TextView
+        android:id="@+id/placeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mail_sans_roman"
+        android:textColor="@color/white"
+        android:textSize="@dimen/placeTextSize"
+        app:layout_constraintEnd_toStartOf="@+id/rightEdge"
+        app:layout_constraintStart_toStartOf="@+id/leftEdge"
+        app:layout_constraintTop_toTopOf="@+id/storyLinesGuideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.12" />
+
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mail_sans_roman"
+        android:textColor="@color/white"
+        android:textSize="@dimen/timeTextSize"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="@+id/placeTextView"
+        app:layout_constraintStart_toStartOf="@+id/placeTextView"
+        app:layout_constraintTop_toBottomOf="@+id/placeTextView" />
+
+    <TextView
+        android:id="@+id/headerTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/placeTextSize"
+        app:layout_constraintEnd_toStartOf="@+id/rightEdge"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/leftEdge"
+        app:layout_constraintTop_toTopOf="@+id/bottomGuideline" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/bottomGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <TextView
+        android:id="@+id/descriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/emptyStoryColor"
+        android:textSize="@dimen/footerTextSize"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/headerTextView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/leftEdge"
+        app:layout_constraintTop_toBottomOf="@+id/headerTextView"
+        app:layout_constraintVertical_bias="0.187" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/footer_button_background"
+        android:padding="5dp"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:text="@string/sourceButtonText"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sourceButtonTextSize"
+        app:layout_constraintBottom_toBottomOf="@+id/blurImage"
+        app:layout_constraintEnd_toStartOf="@+id/rightEdge"
+        app:layout_constraintStart_toStartOf="@+id/leftEdge"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTextView"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/contentDescription"
+        android:padding="8dp"
+        android:scaleX="0.7"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/descriptionTextView"
+        app:srcCompat="@drawable/arrow_up"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,ImageContrastCheck,DuplicateSpeakableTextCheck" />
+</androidx.constraintlayout.widget.ConstraintLayout>

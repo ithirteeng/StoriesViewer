@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/firstStory">
+
+    <fragment
+        android:id="@+id/firstStory"
+        android:name="com.example.stroiesviewer.FirstStory"
+        android:label="fragment_first_story"
+        tools:layout="@layout/fragment_first_story" >
+        <action
+            android:id="@+id/action_firstStory_to_secondStory"
+            app:destination="@id/secondStory" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondStory"
+        android:name="com.example.stroiesviewer.SecondStory"
+        android:label="fragment_second_story"
+        tools:layout="@layout/fragment_second_story" >
+        <action
+            android:id="@+id/action_secondStory_to_firstStory"
+            app:destination="@id/firstStory" />
+        <action
+            android:id="@+id/action_secondStory_to_thirdStory"
+            app:destination="@id/thirdStory" />
+    </fragment>
+    <fragment
+        android:id="@+id/thirdStory"
+        android:name="com.example.stroiesviewer.ThirdStory"
+        android:label="fragment_third_story"
+        tools:layout="@layout/fragment_third_story" >
+        <action
+            android:id="@+id/action_thirdStory_to_secondStory"
+            app:destination="@id/secondStory" />
+        <action
+            android:id="@+id/action_thirdStory_to_fourthStory"
+            app:destination="@id/fourthStory" />
+    </fragment>
+    <fragment
+        android:id="@+id/fourthStory"
+        android:name="com.example.stroiesviewer.FourthStory"
+        android:label="fragment_fourth_story"
+        tools:layout="@layout/fragment_fourth_story" >
+        <action
+            android:id="@+id/action_fourthStory_to_thirdStory"
+            app:destination="@id/thirdStory" />
+        <action
+            android:id="@+id/action_fourthStory_to_fifthStory"
+            app:destination="@id/fifthStory" />
+    </fragment>
+    <fragment
+        android:id="@+id/fifthStory"
+        android:name="com.example.stroiesviewer.FifthStory"
+        android:label="fragment_fifth_story"
+        tools:layout="@layout/fragment_fifth_story" >
+        <action
+            android:id="@+id/action_fifthStory_to_fourthStory"
+            app:destination="@id/fourthStory" />
+    </fragment>
+</navigation>
