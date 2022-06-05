@@ -2,7 +2,6 @@ package com.example.stroiesviewer
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,13 +37,12 @@ class FirstStory : Fragment(R.layout.fragment_first_story) {
             )
         )
         changeStoriesData.updateView(0, requireContext())
-        //changeStoriesData.changeBackgroundPicture(requireContext(), binding.container.blurImage)
     }
 
     @SuppressLint("ClickableViewAccessibility", "NewApi")
     private fun toAnotherFragments() {
         val width = activity?.windowManager?.defaultDisplay?.width
-        NavigationLogic(null, R.id.secondStory, binding.root).navigate(width, findNavController())
+        NavigationLogic(null,R.id.firstContainer, SecondStory(), binding.root).navigate(width, activity?.supportFragmentManager)
     }
 
 }

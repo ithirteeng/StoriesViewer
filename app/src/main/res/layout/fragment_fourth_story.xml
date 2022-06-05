@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FourthStory">
+    tools:context=".FourthStory"
+    android:id="@+id/fourthContainer">
 
     <include layout="@layout/template_for_fragments"
         android:id="@+id/container"/>

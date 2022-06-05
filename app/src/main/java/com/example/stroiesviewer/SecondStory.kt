@@ -43,6 +43,6 @@ class SecondStory : Fragment(R.layout.fragment_second_story) {
     @SuppressLint("ClickableViewAccessibility", "NewApi")
     private fun toAnotherFragments() {
         val width = activity?.windowManager?.defaultDisplay?.width
-        NavigationLogic(R.id.firstStory, R.id.thirdStory, binding.root).navigate(width, findNavController())
+        NavigationLogic(FirstStory() ,R.id.secondContainer, ThirdStory(), binding.root).navigate(width, activity?.supportFragmentManager)
     }
 }
