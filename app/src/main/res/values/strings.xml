@@ -3,4 +3,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="contentDescription">content</string>
     <string name="sourceButtonText">Подробнее</string>
+    <string name="newYorkSource">https://en.wikipedia.org/wiki/New_York_City</string>
+    <string name="moscowSource">https://en.wikipedia.org/wiki/Moscow</string>
+    <string name="mexicoSource">https://en.wikipedia.org/wiki/Mexico</string>
+    <string name="bostonSource">https://en.wikipedia.org/wiki/Boston</string>
+    <string name="newDeliSource">https://en.wikipedia.org/wiki/New_Delhi</string>
 </resources>

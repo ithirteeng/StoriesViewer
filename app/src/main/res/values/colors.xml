@@ -8,5 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="emptyStoryColor">#97FFFFFF</color>
+    <color name="tintBlur">#8F000000</color>
     <color name="descriptionTetColor">#99FFFFFF</color>
 </resources>

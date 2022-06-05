@@ -1,6 +1,8 @@
 package com.example.stroiesviewer
 
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,6 +22,12 @@ class SecondStory : Fragment(R.layout.fragment_second_story) {
         binding = FragmentSecondStoryBinding.inflate(layoutInflater)
         changeData()
         toAnotherFragments()
+
+        binding.container.button.setOnClickListener {
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(this.resources.getString(R.string.bostonSource)))
+            startActivity(browserIntent)
+        }
+
         return binding.root
     }
 

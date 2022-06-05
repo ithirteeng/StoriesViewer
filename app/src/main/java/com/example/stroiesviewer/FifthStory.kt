@@ -1,6 +1,8 @@
 package com.example.stroiesviewer
 
 import android.annotation.SuppressLint
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +21,11 @@ class FifthStory : Fragment() {
         binding = FragmentFifthStoryBinding.inflate(layoutInflater)
         changeData()
         toAnotherFragments()
+
+        binding.container.button.setOnClickListener {
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(this.resources.getString(R.string.moscowSource)))
+            startActivity(browserIntent)
+        }
         return binding.root
     }
 
@@ -31,13 +38,13 @@ class FifthStory : Fragment() {
         changeStoriesData.changeDescriptionText("Подборка для вас")
         changeStoriesData.changeMainPicture(
             resources.getDrawable(
-                R.drawable.moscow_blur,
+                R.drawable.moscow_picture,
                 requireContext().theme
             )
         )
         changeStoriesData.makeImage(
             resources.getDrawable(
-                R.drawable.moscow_blur,
+                R.drawable.moscow_picture,
                 requireContext().theme
             ), requireContext()
         )

@@ -5,14 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
     <ImageView
         android:id="@+id/blurImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:contentDescription="@string/contentDescription"
-        android:scaleType="fitCenter"
-        android:scaleX="1"
-        android:scaleY="1"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -22,7 +21,6 @@
         tools:ignore="ImageContrastCheck"
         tools:srcCompat="@tools:sample/avatars" />
 
-
     <ImageView
         android:id="@+id/mainImage"
         android:layout_width="0dp"
@@ -31,7 +29,7 @@
         android:isScrollContainer="true"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/blurImage"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
