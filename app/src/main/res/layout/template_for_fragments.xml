@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <ImageView
         android:id="@+id/blurImage"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:contentDescription="@string/contentDescription"
-        android:scaleType="centerCrop"
+        android:scaleType="fitCenter"
+        android:scaleX="1"
+        android:scaleY="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

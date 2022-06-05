@@ -35,11 +35,11 @@ class FifthStory : Fragment() {
                 requireContext().theme
             )
         )
-        changeStoriesData.changeBackgroundPicture(
+        changeStoriesData.makeImage(
             resources.getDrawable(
                 R.drawable.moscow_blur,
                 requireContext().theme
-            )
+            ), requireContext()
         )
         changeStoriesData.updateView(4, requireContext())
     }

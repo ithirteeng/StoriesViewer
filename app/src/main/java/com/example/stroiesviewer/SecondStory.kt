@@ -36,11 +36,11 @@ class SecondStory : Fragment(R.layout.fragment_second_story) {
                 requireContext().theme
             )
         )
-        changeStoriesData.changeBackgroundPicture(
+        changeStoriesData.makeImage(
             resources.getDrawable(
-                R.drawable.boston_blur,
+                R.drawable.boston_picture,
                 requireContext().theme
-            )
+            ), requireContext()
         )
         changeStoriesData.updateView(1, requireContext())
     }

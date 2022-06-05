@@ -36,11 +36,11 @@ class ThirdStory : Fragment(R.layout.fragment_third_story) {
                 requireContext().theme
             )
         )
-        changeStoriesData.changeBackgroundPicture(
+        changeStoriesData.makeImage(
             resources.getDrawable(
-                R.drawable.india_blur,
+                R.drawable.india_picture,
                 requireContext().theme
-            )
+            ), requireContext()
         )
         changeStoriesData.updateView(2, requireContext())
     }

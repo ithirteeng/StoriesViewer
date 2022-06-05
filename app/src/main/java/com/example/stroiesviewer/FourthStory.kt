@@ -35,11 +35,11 @@ class FourthStory : Fragment() {
                 requireContext().theme
             )
         )
-        changeStoriesData.changeBackgroundPicture(
+        changeStoriesData.makeImage(
             resources.getDrawable(
-                R.drawable.mexico_blur,
+                R.drawable.mexico_pictures,
                 requireContext().theme
-            )
+            ), requireContext()
         )
         changeStoriesData.updateView(3, requireContext())
     }
