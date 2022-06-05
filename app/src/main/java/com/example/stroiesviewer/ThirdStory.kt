@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.stroiesviewer.databinding.FragmentThirdStoryBinding
 
 
@@ -37,12 +36,21 @@ class ThirdStory : Fragment(R.layout.fragment_third_story) {
                 requireContext().theme
             )
         )
+        changeStoriesData.changeBackgroundPicture(
+            resources.getDrawable(
+                R.drawable.india_blur,
+                requireContext().theme
+            )
+        )
         changeStoriesData.updateView(2, requireContext())
     }
 
     @SuppressLint("ClickableViewAccessibility", "NewApi")
     private fun toAnotherFragments() {
         val width = activity?.windowManager?.defaultDisplay?.width
-        NavigationLogic(SecondStory() ,R.id.thirdContainer, FourthStory(), binding.root).navigate(width, activity?.supportFragmentManager)
+        NavigationLogic(SecondStory(), R.id.thirdContainer, FourthStory(), binding.root).navigate(
+            width,
+            activity?.supportFragmentManager
+        )
     }
 }

@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.stroiesviewer.databinding.FragmentFifthStoryBinding
 
 class FifthStory : Fragment() {
@@ -32,7 +31,13 @@ class FifthStory : Fragment() {
         changeStoriesData.changeDescriptionText("Подборка для вас")
         changeStoriesData.changeMainPicture(
             resources.getDrawable(
-                R.drawable.moscow_picture,
+                R.drawable.moscow_blur,
+                requireContext().theme
+            )
+        )
+        changeStoriesData.changeBackgroundPicture(
+            resources.getDrawable(
+                R.drawable.moscow_blur,
                 requireContext().theme
             )
         )
@@ -42,6 +47,9 @@ class FifthStory : Fragment() {
     @SuppressLint("ClickableViewAccessibility", "NewApi")
     private fun toAnotherFragments() {
         val width = activity?.windowManager?.defaultDisplay?.width
-        NavigationLogic(FourthStory() ,R.id.fifthContainer, null, binding.root).navigate(width, activity?.supportFragmentManager)
+        NavigationLogic(FourthStory(), R.id.fifthContainer, null, binding.root).navigate(
+            width,
+            activity?.supportFragmentManager
+        )
     }
 }

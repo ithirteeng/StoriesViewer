@@ -6,6 +6,8 @@ import android.graphics.Color
 import android.graphics.drawable.Drawable
 import android.os.Build
 import androidx.annotation.RequiresApi
+import androidx.appcompat.content.res.AppCompatResources
+import androidx.core.graphics.drawable.DrawableCompat
 import com.example.stroiesviewer.databinding.TemplateForFragmentsBinding
 
 
@@ -41,8 +43,11 @@ class ChangeStoriesData(private val binding: TemplateForFragmentsBinding) {
 
     fun changeMainPicture(imageResource: Drawable) {
         binding.mainImage.setImageDrawable(imageResource)
+
+    }
+
+    fun changeBackgroundPicture(imageResource: Drawable) {
         binding.blurImage.setImageDrawable(imageResource)
-        binding.blurImage.setColorFilter(Color.argb(100, 0, 0, 0))
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")

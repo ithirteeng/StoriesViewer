@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.stroiesviewer.databinding.FragmentFourthStoryBinding
 
 class FourthStory : Fragment() {
@@ -36,12 +35,21 @@ class FourthStory : Fragment() {
                 requireContext().theme
             )
         )
+        changeStoriesData.changeBackgroundPicture(
+            resources.getDrawable(
+                R.drawable.mexico_blur,
+                requireContext().theme
+            )
+        )
         changeStoriesData.updateView(3, requireContext())
     }
 
     @SuppressLint("ClickableViewAccessibility", "NewApi")
     private fun toAnotherFragments() {
         val width = activity?.windowManager?.defaultDisplay?.width
-        NavigationLogic(ThirdStory() ,R.id.fourthContainer, FifthStory(), binding.root).navigate(width, activity?.supportFragmentManager)
+        NavigationLogic(ThirdStory(), R.id.fourthContainer, FifthStory(), binding.root).navigate(
+            width,
+            activity?.supportFragmentManager
+        )
     }
 }
