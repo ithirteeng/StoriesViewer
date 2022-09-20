@@ -1,5 +1,5 @@
 # StoriesViewer
-*VezdeKod semifinal task* <br/> <br/>
+VezdeKod semifinal task <br/> <br/>
 Realization of Instagram/VK stroies showing mechanics
 <p>
 <img src="https://user-images.githubusercontent.com/98749008/191175000-cb0e53a2-258f-4606-8345-1a53d4221a63.jpg" alt="firstScreenShot" width="200"/>
